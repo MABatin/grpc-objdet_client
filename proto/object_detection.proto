@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ObjectDetection;
+
+service ObjectDetection {
+    rpc DetectImage(DetectionRequest) returns (DetectionResponse) {}
+    rpc DetectStream(stream DetectionRequest) returns (stream DetectionResponse) {}
+}
+
+message DetectionRequest {
+    int32 frame_id = 1;
+    repeated int32 classes = 2;
+    bytes image = 3; 
+}
+
+message DetectionResponse {
+    int32 frame_id = 1;
+    repeated Result results = 2;
+    bytes image = 3;
+}
+
+message Result {
+    string label = 1;
+    float score = 2;
+    repeated int32 xyxy = 3;
+    repeated float xyxyn = 4;
+    repeated int32 xywh = 5;
+    repeated float xywhn = 6;
+}
