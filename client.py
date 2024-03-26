@@ -116,10 +116,10 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    
+
     if args.classes is not None:
         try:
-            classes = [int(x) for x in args.classes]
+            args.classes = [int(x) for x in args.classes]
         except:
             raise ValueError("Please provide valid classes (int)!")
     
@@ -138,7 +138,7 @@ if __name__ == "__main__":
 
     if os.path.splitext(args.input)[1] in IMAGE_EXTENSIONS:
         run_image(client=client, Request=RequestType, parse_response=parse_response_func,
-            input_file=args.input, output_file=args.output, show=args.show, classes=classes)
+            input_file=args.input, output_file=args.output, show=args.show, classes=args.classes)
     else:
         # TODO: figure out showing images from response watcher thread
         if args.show:
@@ -147,5 +147,5 @@ if __name__ == "__main__":
         if args.input == "0":
             args.input = int(args.input)  # Webcam
         run_video(client=client, Request=RequestType, parse_response=parse_response_func,
-            input_file=args.input, output_file=args.output, classes=classes,
+            input_file=args.input, output_file=args.output, classes=args.classes,
             desired_fps=args.out_fps)
