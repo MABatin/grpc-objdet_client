@@ -1,4 +1,4 @@
-# grpc-ml-client
+# gRPC Object Detection Client
 A simple gRPC Python client for communicating with gRPC server for various object detection service. Supports both image and video input, as well as saving detection results in an output video file.
 
 # Installation
