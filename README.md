@@ -35,8 +35,10 @@ When accessing a new service, proto file should be compiled with the following c
 
 # TODO
 ---
-- [ ] Add support for sending batch of images 
+- [x] Implement showing of stream output
+- [ ] Add debug option for debug output to console 
 - [ ] Add support for logging to file
+- [ ] Add support for sending batch of images
 - [ ] Add environment variables
 - [ ] Add docker support for deployment
 
