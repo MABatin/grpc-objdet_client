@@ -29,8 +29,8 @@ When accessing a new service, proto file should be compiled with the following c
 
 # Running the client
 -----
-`python client.py --service <SERVICE_NAME> --host <HOST> --port <PORT> --input <PATH_TO_INPUT>`\
-[OPTIONAL]  `--output <PATH_TO_OUTPUT> --out-fps <FPS> --classes <LIST_OF_CLASSES>`
+`python client.py --host <HOST> --port <PORT> --input <PATH_TO_INPUT>`\
+[OPTIONAL]  `--output <PATH_TO_OUTPUT> --out-fps <FPS> --classes <LIST_OF_CLASSES> --show`
 
 
 # TODO
